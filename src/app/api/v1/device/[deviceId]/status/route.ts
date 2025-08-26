@@ -7,8 +7,8 @@ type RequestBody = {
 
 /**
  * @swagger
- * /api/v1/device:
- *   get:
+ * /api/v1/device/{deviceId}/status:
+ *   put:
  *     description: Updates a device status
  *     responses:
  *       200:

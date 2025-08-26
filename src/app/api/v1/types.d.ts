@@ -27,10 +27,11 @@ export interface DeviceDetail extends DeviceDao, DeviceTypeDao {}
 
 export type DeviceSummary = {
   uid: string
-  productId: ProductId
+  productId: string
   name: string
   description: string
-} | undefined
+  status: string
+}
 
 export type DeviceParams = {
   deviceId: string

@@ -1,3 +1,4 @@
+'use server'
 import { runQuery } from '@/app/api/v1/device/data-access/util/run-query'
 
 export const getAllDevices = async () => {
