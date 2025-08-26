@@ -27,7 +27,7 @@ export async function GET() {
  *       201:
  *         description: created
  *       400:
- *         description: device is already registered, incorrect device id format
+ *         description: device is already registered, incorrect device id format, unknown device type
  */
 export async function POST(request: Request) {
   try {

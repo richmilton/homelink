@@ -34,10 +34,10 @@ export async function GET(
  *   delete:
  *     description: Deletes a device
  *     responses:
- *       204:
- *         description: no content
+ *       200:
+ *         description: deleted successfully
  *       404:
- *         description: device not found, incorrect device id format
+ *         description: device not found, incorrect device id format, device already deleted
  */
 export async function DELETE(
   _: Request,
@@ -46,10 +46,10 @@ export async function DELETE(
   try {
     await removeDevice((await params).deviceId)
 
-    return new Response(null, { status: 204 })
+    return new Response('deleted successfully', { status: 200 })
   } catch (error) {
     console.error(error)
 
-    return new Response(null, { status: 404 })
+    return new Response(error as string, { status: 404 })
   }
 }
