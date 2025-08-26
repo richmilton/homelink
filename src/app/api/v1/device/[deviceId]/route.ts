@@ -4,7 +4,7 @@ import { DeviceParams } from '@/app/api/v1/types'
 
 /**
  * @swagger
- * /api/v1/device:
+ * /api/v1/device/{deviceId}:
  *   get:
  *     description: Returns device details
  *     responses:
@@ -30,8 +30,8 @@ export async function GET(
 
 /**
  * @swagger
- * /api/v1/device:
- *   get:
+ * /api/v1/device/{deviceId}:
+ *   delete:
  *     description: Deletes a device
  *     responses:
  *       204:

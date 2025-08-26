@@ -17,9 +17,10 @@ export const listDevices = async (): Promise<DeviceSummary[]> => {
         if (thisDeviceType) {
           response.push({
             uid: device.productUid as string,
-            productId: device.productId,
+            productId: device.productType as string,
             name: thisDeviceType?.productName as string,
             description: thisDeviceType?.description as string,
+            status: device?.status as string,
           })
         }
       })

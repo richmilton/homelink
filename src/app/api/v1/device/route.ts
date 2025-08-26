@@ -21,7 +21,7 @@ export async function GET() {
 /**
  * @swagger
  * /api/v1/device:
- *   get:
+ *   post:
  *     description: Registers a new device
  *     responses:
  *       201:
