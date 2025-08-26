@@ -13,10 +13,12 @@ npm run dev
 
 Seed the database:
 Windows users will need to open a powershell prompt from the top level of the repo
-directory 
+directory to access wrangler cli
 
 ```bash
-npm run db-init-device-type
-npm run db-init-device
-npm run db-init-device-history
+npm run db-init
 ```
+
+Next, import the postman collection from `./postman/dev.postman_collection`
+
+See some registered devices at http://localhost:3000/dashboard
