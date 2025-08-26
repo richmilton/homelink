@@ -6,13 +6,23 @@ type DeviceSummaryProps = {
   deviceData: DeviceSummary
 }
 
+type DeviceItemProps = {
+  label: string
+  value: string
+}
+
+const DeviceItem = ({ label, value }: DeviceItemProps) => <li>
+  <span className="inline-block font-bold w-36 mt-1 sm:text-right mr-2">{label}:</span>
+  <span className="inline-block w-48 sm:text-left">{value}</span>
+</li>
+
 const DeviceDetails = ({ deviceData }: DeviceSummaryProps) => <li>
-  <div className="rounded border border-gray-500 m-4 p-8">
-    <p>Product code: {deviceData?.productId}</p>
-    <p>Device name: {deviceData?.name}</p>
-    <p>Mac address: {deviceData?.uid}</p>
-    <p>Status: {deviceData.status}</p>
-  </div>
+  <ul className="rounded border border-gray-500 m-4 p-8">
+    <DeviceItem label="Product code" value={deviceData?.productId} />
+    <DeviceItem label="Device name" value={deviceData?.name} />
+    <DeviceItem label="Mac address" value={deviceData?.uid} />
+    <DeviceItem label="Status" value={deviceData?.status} />
+  </ul>
 </li>
 
 export const DeviceList = () => {

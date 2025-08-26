@@ -10,9 +10,7 @@
 		"deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
 		"preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
 		"cf-typegen": "wrangler types --env-interface CloudflareEnv ./cloudflare-env.d.ts",
-		"db-init-device-type": "wrangler d1 execute DB --file data/create-device-type.sql",
-		"db-init-device": "wrangler d1 execute DB --file data/create-device.sql",
-		"db-init-device-history": "wrangler d1 execute DB --file data/create-device-history.sql"
+		"db-init": "wrangler d1 execute DB --file data/create.sql"
 	},
 	"dependencies": {
 		"@opennextjs/cloudflare": "^1.6.5",

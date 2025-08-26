@@ -4,11 +4,11 @@
 		"name": "Homelink",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "3737348",
-		"_collection_link": "https://test77-6739.postman.co/workspace/75b56392-9fb9-44d8-8aa4-6ee44926d8b1/collection/3737348-fab000e6-4754-48b9-a84e-494a47c26ea8?action=share&source=collection_link&creator=3737348"
+		"_collection_link": "https://test77-6739.postman.co/workspace/Test-Workspace~75b56392-9fb9-44d8-8aa4-6ee44926d8b1/collection/3737348-fab000e6-4754-48b9-a84e-494a47c26ea8?action=share&source=collection_link&creator=3737348"
 	},
 	"item": [
 		{
-			"name": "Add new device",
+			"name": "Add new device 01-01-01-01-01-EA",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -35,6 +35,138 @@
 					]
 				},
 				"description": "Registers a new device\n\n201\n\n`{`\n\n`\"productUid\": \"01-01-01-01-01-02\",`\n\n`\"productType\": \"Ei1025\",`\n\n`\"pathToSelf\": \"/api/v1/device/01-01-01-01-01-02\",`\n\n`\"lastUpdated\": 1756208548692,`\n\n`\"status\": \"default\"`\n\n`}`\n\n400\n\n`cods`"
+			},
+			"response": []
+		},
+		{
+			"name": "Add new device 01-01-01-01-01-EE",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productUid\": \"01-01-01-01-01-EE\",\n    \"productType\": \"Ei1020\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/device",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"device"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new device 03-01-01-01-01-EA",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productUid\": \"03-01-01-01-01-EA\",\n    \"productType\": \"Ei1020\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/device",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"device"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new device 02-01-01-01-01-EA",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productUid\": \"02-01-01-01-01-EA\",\n    \"productType\": \"Ei1020\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/device",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"device"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new device 04-01-01-01-01-EA",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productUid\": \"04-01-01-01-01-EA\",\n    \"productType\": \"Ei1020\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/device",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"device"
+					]
+				}
 			},
 			"response": []
 		},
@@ -132,7 +264,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/v1/device/01-01-01-01-01-FF",
+					"raw": "http://localhost:3000/api/v1/device/01-01-01-01-01-EE",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -142,7 +274,7 @@
 						"api",
 						"v1",
 						"device",
-						"01-01-01-01-01-FF"
+						"01-01-01-01-01-EE"
 					]
 				}
 			},
@@ -204,7 +336,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/v1/device/01-01-01-01-01-01",
+					"raw": "http://localhost:3000/api/v1/device/01-01-01-01-01-EE",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -214,7 +346,32 @@
 						"api",
 						"v1",
 						"device",
-						"01-01-01-01-01-01"
+						"01-01-01-01-01-EE"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete device by id 404",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/device/01-01-01-01-01-EB",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"device",
+						"01-01-01-01-01-EB"
 					]
 				}
 			},
@@ -230,7 +387,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"newStatus\": \"new status\"\n}",
+					"raw": "{\n    \"newStatus\": \"powered on\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -238,7 +395,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/v1/device/01-01-01-01-01-FF/status",
+					"raw": "http://localhost:3000/api/v1/device/01-01-01-01-01-EA/status",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -248,7 +405,7 @@
 						"api",
 						"v1",
 						"device",
-						"01-01-01-01-01-FF",
+						"01-01-01-01-01-EA",
 						"status"
 					]
 				}
