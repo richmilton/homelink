@@ -26,7 +26,7 @@ export const registerDevice = async (device: NewDevice) => {
   const deviceResponse = await insertDevice({ ...device, productUid: macAddress }, now, defaultStatus)
 
   if (deviceResponse) {
-    await updateHistory(device.productUid, 'register', defaultStatus, now)
+    await updateHistory(device.productUid, 'registerDevice', defaultStatus, now)
   }
 
   return deviceResponse
