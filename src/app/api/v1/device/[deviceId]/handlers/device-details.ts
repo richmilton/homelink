@@ -8,7 +8,7 @@ export const deviceDetails = async (deviceId: string): Promise<DeviceDetail> => 
 
   const device = await getDeviceById(deviceId)
 
-  if (device) {
+  if (device && !device.deleteDate) {
     const deviceType = await getDeviceTypeById(device.productType as string)
 
     if (deviceType) {
