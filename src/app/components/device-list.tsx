@@ -6,10 +6,6 @@ type DeviceSummaryProps = {
   deviceData: DeviceSummary
 }
 
-type DeviceListProps = {
-  data: DeviceSummary[]
-}
-
 const DeviceDetails = ({ deviceData }: DeviceSummaryProps) => <li>
   <div className="rounded border border-gray-500 m-4 p-8">
     <p>Product code: {deviceData?.productId}</p>
