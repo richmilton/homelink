@@ -1,0 +1,329 @@
+{
+	"info": {
+		"_postman_id": "fab000e6-4754-48b9-a84e-494a47c26ea8",
+		"name": "Homelink",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3737348",
+		"_collection_link": "https://test77-6739.postman.co/workspace/75b56392-9fb9-44d8-8aa4-6ee44926d8b1/collection/3737348-fab000e6-4754-48b9-a84e-494a47c26ea8?action=share&source=collection_link&creator=3737348"
+	},
+	"item": [
+		{
+			"name": "Add new device",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productUid\": \"01-01-01-01-01-EA\",\n    \"productType\": \"Ei1020\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/device",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"device"
+					]
+				},
+				"description": "Registers a new device\n\n201\n\n`{`\n\n`\"productUid\": \"01-01-01-01-01-02\",`\n\n`\"productType\": \"Ei1025\",`\n\n`\"pathToSelf\": \"/api/v1/device/01-01-01-01-01-02\",`\n\n`\"lastUpdated\": 1756208548692,`\n\n`\"status\": \"default\"`\n\n`}`\n\n400\n\n`cods`"
+			},
+			"response": []
+		},
+		{
+			"name": "Add new device 400 - incorrect id format",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productUid\": \"01-01-01-01-01-EP\",\n    \"productType\": \"Ei1020\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/device",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"device"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new device 400 - unknown device type",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productUid\": \"01-01-01-01-01-EB\",\n    \"productType\": \"unknown\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/device",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"device"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of devices",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/device",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"device"
+					]
+				},
+				"description": "Gets a list of registered devices with summary information"
+			},
+			"response": []
+		},
+		{
+			"name": "Get device details by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/device/01-01-01-01-01-FF",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"device",
+						"01-01-01-01-01-FF"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get device details by id 404 - incorrect id format",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/device/01-01-01-01-01-Fz",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"device",
+						"01-01-01-01-01-Fz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get device details by id 404 - device not found",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/device/01-01-01-01-01-FC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"device",
+						"01-01-01-01-01-FC"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete device by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/device/01-01-01-01-01-01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"device",
+						"01-01-01-01-01-01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update device status by device id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"newStatus\": \"new status\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/device/01-01-01-01-01-FF/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"device",
+						"01-01-01-01-01-FF",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update device status 404 - incorrect id format",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"newStatus\": \"new status\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/device/01-01-01-01-01-FZ/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"device",
+						"01-01-01-01-01-FZ",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update device status 404 - device not found",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"newStatus\": \"new status\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/device/01-01-01-01-01-FC/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"device",
+						"01-01-01-01-01-FC",
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
