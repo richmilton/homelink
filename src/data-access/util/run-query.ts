@@ -1,4 +1,4 @@
-import { getEnv } from '@/app/api/v1/device/data-access/util/get-env'
+import { getEnv } from '@/data-access/util/get-env'
 
 export const runQuery = async (sql: string, bindings: unknown[] = [] ) =>  {
   const env = await getEnv()

@@ -1,6 +1,6 @@
-import { deleteDevice } from '@/app/api/v1/device/data-access/delete-device'
+import { deleteDevice } from '@/data-access/delete-device'
 import { checkMacAddress } from '@/app/api/v1/device/validation/check-mac-address'
-import { getDeviceById } from '@/app/api/v1/device/data-access/get-device-by-id'
+import { getDeviceById } from '@/data-access/get-device-by-id'
 
 export const removeDevice = async (deviceId: string) => {
   checkMacAddress(deviceId)

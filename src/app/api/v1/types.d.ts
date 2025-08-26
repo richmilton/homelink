@@ -1,4 +1,4 @@
-export interface DeviceTypeDao {
+export interface DeviceType {
   productTypeId?: string
   productName: string
   description: string
@@ -6,7 +6,7 @@ export interface DeviceTypeDao {
   manualUrl: string
 }
 
-export interface DeviceDao {
+export interface Device {
   productUid: string
   productType: string
   status: string
@@ -18,12 +18,12 @@ export interface NewDevice {
   productType: string
 }
 
-export interface DeviceResponse extends DeviceDao {
+export interface DeviceResponse extends Device {
   pathToSelf: string
   lastUpdated: number
 }
 
-export interface DeviceDetail extends DeviceDao, DeviceTypeDao {}
+export interface DeviceDetail extends Device, DeviceType {}
 
 export type DeviceSummary = {
   uid: string

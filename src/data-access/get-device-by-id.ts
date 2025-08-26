@@ -1,4 +1,4 @@
-import { runQuery } from '@/app/api/v1/device/data-access/util/run-query'
+import { runQuery } from '@/data-access/util/run-query'
 
 export const getDeviceById = async (id: string) => {
   const d1Result =

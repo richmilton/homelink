@@ -10,8 +10,9 @@
 		"deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
 		"preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
 		"cf-typegen": "wrangler types --env-interface CloudflareEnv ./cloudflare-env.d.ts",
-		"db-init-device-type": "./node_modules/.bin/wrangler d1 execute DB --command 'drop table device_type' && ./node_modules/.bin/wrangler d1 execute DB --file data/create-device-type.sql",
-		"db-init-device": "./node_modules/.bin/wrangler d1 execute DB --file data/create-device.sql"
+		"db-init-device-type": "wrangler d1 execute DB --file data/create-device-type.sql",
+		"db-init-device": "wrangler d1 execute DB --file data/create-device.sql",
+		"db-init-device-history": "wrangler d1 execute DB --file data/create-device-history.sql"
 	},
 	"dependencies": {
 		"@opennextjs/cloudflare": "^1.6.5",

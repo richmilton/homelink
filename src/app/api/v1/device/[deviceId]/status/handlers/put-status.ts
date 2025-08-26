@@ -1,6 +1,6 @@
-import { updateDeviceStatus } from '@/app/api/v1/device/data-access/update-device-status'
+import { updateDeviceStatus } from '@/data-access/update-device-status'
 import { checkMacAddress } from '@/app/api/v1/device/validation/check-mac-address'
-import { getDeviceById } from '@/app/api/v1/device/data-access/get-device-by-id'
+import { getDeviceById } from '@/data-access/get-device-by-id'
 
 export const putStatus = async (deviceId: string, status: string) => {
   checkMacAddress(deviceId)
