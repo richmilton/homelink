@@ -1,5 +1,3 @@
-type ProductId = 'Ei1020' | 'Ei1025'
-
 export interface DeviceTypeDao {
   productTypeId?: string
   productName: string
@@ -10,9 +8,14 @@ export interface DeviceTypeDao {
 
 export interface DeviceDao {
   productUid: string
-  productType: ProductId
+  productType: string
   status: string
   deletedDate?: number
+}
+
+export interface NewDevice {
+  productUid: string
+  productType: string
 }
 
 export interface DeviceResponse extends DeviceDao {
@@ -27,7 +30,7 @@ export type DeviceSummary = {
   productId: ProductId
   name: string
   description: string
-}
+} | undefined
 
 export type DeviceParams = {
   deviceId: string

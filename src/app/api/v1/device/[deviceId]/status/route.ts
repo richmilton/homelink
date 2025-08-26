@@ -1,33 +1,42 @@
 import { DeviceParams } from '@/app/api/v1/types'
-import { patchStatus } from '@/app/api/v1/device/[deviceId]/status/handlers/patch-status'
+import { putStatus } from '@/app/api/v1/device/[deviceId]/status/handlers/put-status'
 
 type RequestBody = {
-  status: string
+  newStatus: string
 }
 
-export async function PATCH(
+/**
+ * @swagger
+ * /api/v1/device:
+ *   get:
+ *     description: Updates a device status
+ *     responses:
+ *       200:
+ *         description: ok
+ *       400:
+ *         description: property newStatus not in request body
+ *       404:
+ *         description: device not found, incorrect device id format
+ */
+export async function PUT(
   request: Request,
   { params }: { params: Promise<DeviceParams> }
 ) {
   try {
-    const deviceId = (await params).deviceId
+    const { deviceId } = await params
 
-    const { status } = await request.json<RequestBody>()
+    const { newStatus } = await request.json<RequestBody>()
 
-    console.log('PATCH', status)
+    if (newStatus) {
+      const updatedDevice = await putStatus(deviceId, newStatus)
 
-    if (status) {
-      const newDevice = await patchStatus(deviceId, status)
-
-      console.log('PATCH', newDevice, deviceId)
-
-      return Response.json(newDevice)
+      return Response.json(updatedDevice)
     }
 
-    return new Response('property status not in request body', { status: 400 })
+    return new Response('property newStatus not in request body', { status: 400 })
   } catch (error) {
     console.error(error)
 
-    return new Response('', { status: 404 })
+    return new Response(error as string, { status: 404 })
   }
 }

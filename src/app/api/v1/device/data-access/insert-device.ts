@@ -1,9 +1,9 @@
-import { DeviceDao, DeviceResponse } from '@/app/api/v1/types'
+import { DeviceResponse, NewDevice } from '@/app/api/v1/types'
 import { getAllDeviceTypes } from '@/app/api/v1/device/data-access/get-all-device-types'
 import { runQuery } from '@/app/api/v1/device/data-access/util/run-query'
 import { getDeviceId } from '@/app/api/v1/device/data-access/get-device-id'
 
-export const insertDevice = async (device: DeviceDao): Promise<DeviceResponse> => {
+export const insertDevice = async (device: NewDevice): Promise<DeviceResponse> => {
   const existingDevice = await getDeviceId(device.productUid)
 
   if (existingDevice?.results?.length) {

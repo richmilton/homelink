@@ -1,8 +1,11 @@
-import { DeviceDetail, ProductId } from '@/app/api/v1/types'
+import { DeviceDetail } from '@/app/api/v1/types'
 import { getDeviceById } from '@/app/api/v1/device/data-access/get-device-by-id'
 import { getDeviceTypeById } from '@/app/api/v1/device/data-access/get-device-type-by-id'
+import { checkMacAddress } from '@/app/api/v1/device/validation/check-mac-address'
 
 export const deviceDetails = async (deviceId: string): Promise<DeviceDetail> => {
+  checkMacAddress(deviceId)
+
   const device = await getDeviceById(deviceId)
 
   if (device) {
@@ -11,7 +14,7 @@ export const deviceDetails = async (deviceId: string): Promise<DeviceDetail> => 
     if (deviceType) {
       return {
         productUid: device.productUid as string,
-        productType: device.productType as ProductId,
+        productType: device.productType as string,
         productName: deviceType.productName as string,
         description: deviceType.description as string,
         status: device.status as string,
@@ -21,5 +24,5 @@ export const deviceDetails = async (deviceId: string): Promise<DeviceDetail> => 
     }
   }
 
-  throw new Error('not found')
+  throw new Error('device not found')
 }

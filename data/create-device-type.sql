@@ -1,4 +1,3 @@
--- drop table device_type;
 create table device_type ("id" integer PRIMARY KEY,"productTypeId" text, "productName" text, "description" text, "dataSheetUrl" text, "manualUrl" text);
 insert into device_type (productTypeId, productName, description, dataSheetUrl, manualUrl)
     values
