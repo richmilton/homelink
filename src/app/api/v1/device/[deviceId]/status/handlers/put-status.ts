@@ -7,8 +7,6 @@ export const putStatus = async (deviceId: string, status: string) => {
 
   const d1Result = await updateDeviceStatus(deviceId, status)
 
-  console.log('PATCH', d1Result)
-
   if (!d1Result?.success) {
     throw new Error(`${deviceId} not updated`)
   }

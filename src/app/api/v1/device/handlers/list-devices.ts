@@ -1,25 +1,30 @@
 import { getAllDeviceTypes } from '@/app/api/v1/device/data-access/get-all-device-types'
 import { getAllDevices } from '@/app/api/v1/device/data-access/get-all-devices'
+import { DeviceSummary } from '@/app/api/v1/types'
 
-export const listDevices = async () => {
+export const listDevices = async (): Promise<DeviceSummary[]> => {
   const devices = await getAllDevices()
+  const response: DeviceSummary[]  = []
 
   if (devices?.results?.length) {
     const deviceTypes = await getAllDeviceTypes()
 
     if (deviceTypes?.results?.length) {
-      return devices?.results?.map(device => {
-        const thisDeviceType = deviceTypes?.results?.find((deviceType) => device.productType === deviceType.productTypeId)
+      devices?.results?.forEach(device => {
+        const thisDeviceType
+          = deviceTypes?.results?.find((deviceType) => device.productType === deviceType.productTypeId)
 
-        return {
-          uid: device.productUid,
-          productId: device.productType,
-          name: thisDeviceType?.productName,
-          description: thisDeviceType?.description,
+        if (thisDeviceType) {
+          response.push({
+            uid: device.productUid as string,
+            productId: device.productId,
+            name: thisDeviceType?.productName as string,
+            description: thisDeviceType?.description as string,
+          })
         }
       })
     }
   }
 
-  return []
+  return response
 }

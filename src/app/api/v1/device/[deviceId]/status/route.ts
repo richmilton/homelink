@@ -5,6 +5,19 @@ type RequestBody = {
   newStatus: string
 }
 
+/**
+ * @swagger
+ * /api/v1/device:
+ *   get:
+ *     description: Updates a device status
+ *     responses:
+ *       200:
+ *         description: ok
+ *       400:
+ *         description: property newStatus not in request body
+ *       404:
+ *         description: device not found, incorrect device id format
+ */
 export async function PUT(
   request: Request,
   { params }: { params: Promise<DeviceParams> }
