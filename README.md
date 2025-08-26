@@ -2,21 +2,16 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, seed the database:
+First, run the development server:
+
+```bash
+npm i
+npm run dev
+```
+
+Seed the database:
 
 ```bash
 wrangler d1 execute DB --file data/create-device.sql
 wrangler d1 execute DB --file data/create-device-type.sql
-```
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
