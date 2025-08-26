@@ -11,6 +11,10 @@ export const putStatus = async (deviceId: string, status: string) => {
     throw new Error('device not found')
   }
 
+  if (d1FindResult?.deleteDate) {
+    throw new Error('device has been deleted')
+  }
+
   const d1Result = await updateDeviceStatus(deviceId, status)
 
   if (!d1Result?.success) {

@@ -16,7 +16,7 @@ type RequestBody = {
  *       400:
  *         description: property newStatus not in request body
  *       404:
- *         description: device not found, incorrect device id format
+ *         description: device not found, incorrect device id format, device has been deleted
  */
 export async function PUT(
   request: Request,
