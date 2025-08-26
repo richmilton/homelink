@@ -16,7 +16,7 @@ type RequestBody = {
  *       400:
  *         description: property newStatus not in request body
  *       404:
- *         description: device not found, incorrect device id format
+ *         description: device not found, incorrect device id format, device has been deleted
  */
 export async function PUT(
   request: Request,
@@ -28,6 +28,11 @@ export async function PUT(
     const { newStatus } = await request.json<RequestBody>()
 
     if (newStatus) {
+      //
+      // Here we would need to interact with the physical device or controller to change something
+      // then only update the state in the db if we are successful
+      //
+
       const updatedDevice = await putStatus(deviceId, newStatus)
 
       return Response.json(updatedDevice)
