@@ -24,5 +24,5 @@ export const deviceDetails = async (deviceId: string): Promise<DeviceDetail> => 
     }
   }
 
-  throw new Error('not found')
+  throw new Error('device not found')
 }

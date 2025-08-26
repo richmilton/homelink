@@ -15,15 +15,15 @@ export async function PUT(
     const { newStatus } = await request.json<RequestBody>()
 
     if (newStatus) {
-      const newDevice = await putStatus(deviceId, newStatus)
+      const updatedDevice = await putStatus(deviceId, newStatus)
 
-      return Response.json(newDevice)
+      return Response.json(updatedDevice)
     }
 
     return new Response('property newStatus not in request body', { status: 400 })
   } catch (error) {
     console.error(error)
 
-    return new Response('', { status: 404 })
+    return new Response(error as string, { status: 404 })
   }
 }
