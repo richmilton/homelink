@@ -2,7 +2,7 @@ import { DeviceParams } from '@/app/api/v1/types'
 import { putStatus } from '@/app/api/v1/device/[deviceId]/status/handlers/put-status'
 
 type RequestBody = {
-  status: string
+  newStatus: string
 }
 
 export async function PUT(
@@ -10,17 +10,17 @@ export async function PUT(
   { params }: { params: Promise<DeviceParams> }
 ) {
   try {
-    const deviceId = (await params).deviceId
+    const { deviceId } = await params
 
-    const { status } = await request.json<RequestBody>()
+    const { newStatus } = await request.json<RequestBody>()
 
-    if (status) {
-      const newDevice = await putStatus(deviceId, status)
+    if (newStatus) {
+      const newDevice = await putStatus(deviceId, newStatus)
 
       return Response.json(newDevice)
     }
 
-    return new Response('property status not in request body', { status: 400 })
+    return new Response('property newStatus not in request body', { status: 400 })
   } catch (error) {
     console.error(error)
 

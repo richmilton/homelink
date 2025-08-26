@@ -15,6 +15,11 @@ export interface DeviceDao {
   deletedDate?: number
 }
 
+export interface NewDevice {
+  productUid: string
+  productType: ProductId
+}
+
 export interface DeviceResponse extends DeviceDao {
   pathToSelf: string
   lastUpdated: number
