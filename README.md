@@ -12,8 +12,11 @@ npm run dev
 ```
 
 Seed the database:
+Windows users will need to open a powershell prompt from the top level of the repo
+directory 
 
 ```bash
 npm run db-init-device-type
 npm run db-init-device
+npm run db-init-device-history
 ```
