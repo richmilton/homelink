@@ -14,6 +14,6 @@ npm run dev
 Seed the database:
 
 ```bash
-wrangler d1 execute DB --file data/create-device.sql
-wrangler d1 execute DB --file data/create-device-type.sql
+npm run db-init-device-type
+npm run db-init-device
 ```
