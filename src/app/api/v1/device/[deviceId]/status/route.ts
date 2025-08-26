@@ -1,11 +1,11 @@
 import { DeviceParams } from '@/app/api/v1/types'
-import { patchStatus } from '@/app/api/v1/device/[deviceId]/status/handlers/patch-status'
+import { putStatus } from '@/app/api/v1/device/[deviceId]/status/handlers/put-status'
 
 type RequestBody = {
   status: string
 }
 
-export async function PATCH(
+export async function PUT(
   request: Request,
   { params }: { params: Promise<DeviceParams> }
 ) {
@@ -14,12 +14,8 @@ export async function PATCH(
 
     const { status } = await request.json<RequestBody>()
 
-    console.log('PATCH', status)
-
     if (status) {
-      const newDevice = await patchStatus(deviceId, status)
-
-      console.log('PATCH', newDevice, deviceId)
+      const newDevice = await putStatus(deviceId, status)
 
       return Response.json(newDevice)
     }
