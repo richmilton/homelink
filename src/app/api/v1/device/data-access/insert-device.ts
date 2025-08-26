@@ -1,4 +1,4 @@
-import { DeviceDao, DeviceResponse, NewDevice } from '@/app/api/v1/types'
+import { DeviceResponse, NewDevice } from '@/app/api/v1/types'
 import { getAllDeviceTypes } from '@/app/api/v1/device/data-access/get-all-device-types'
 import { runQuery } from '@/app/api/v1/device/data-access/util/run-query'
 import { getDeviceId } from '@/app/api/v1/device/data-access/get-device-id'

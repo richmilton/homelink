@@ -13,7 +13,7 @@ export async function GET(
   } catch (error) {
     console.error(error)
 
-    return new Response(null, { status: 404 })
+    return new Response(error as string, { status: 404 })
   }
 }
 

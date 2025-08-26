@@ -1,8 +1,11 @@
 import { DeviceDetail, ProductId } from '@/app/api/v1/types'
 import { getDeviceById } from '@/app/api/v1/device/data-access/get-device-by-id'
 import { getDeviceTypeById } from '@/app/api/v1/device/data-access/get-device-type-by-id'
+import { checkMacAddress } from '@/app/api/v1/device/validation/check-mac-address'
 
 export const deviceDetails = async (deviceId: string): Promise<DeviceDetail> => {
+  checkMacAddress(deviceId)
+
   const device = await getDeviceById(deviceId)
 
   if (device) {
