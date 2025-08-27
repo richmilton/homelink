@@ -1,6 +1,6 @@
 import { DeviceDetail } from '@/app/api/v1/types'
-import { getDeviceById } from '@/data-access/get-device-by-id'
-import { getDeviceTypeById } from '@/data-access/get-device-type-by-id'
+import { getDeviceById } from '@/data-access/cloudflare-d1/get-device-by-id'
+import { getDeviceTypeById } from '@/data-access/cloudflare-d1/get-device-type-by-id'
 import { checkMacAddress } from '@/app/api/v1/device/validation/check-mac-address'
 
 export const deviceDetails = async (deviceId: string): Promise<DeviceDetail> => {

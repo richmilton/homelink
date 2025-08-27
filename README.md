@@ -19,6 +19,6 @@ directory to access wrangler cli
 npm run db-init
 ```
 
-Next, import the postman collection from `./postman/dev.postman_collection`
+Next, import and run the postman collection from `./postman/dev.postman_collection`
 
 See some registered devices at http://localhost:3000/dashboard

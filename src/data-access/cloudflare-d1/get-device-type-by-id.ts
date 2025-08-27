@@ -1,4 +1,4 @@
-import { runQuery } from '@/data-access/util/run-query'
+import { runQuery } from '@/data-access/cloudflare-d1/util/run-query'
 
 export const getDeviceTypeById = async (deviceTypeId: string) => {
   const d1Result =
