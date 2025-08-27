@@ -1,9 +1,9 @@
 import { NewDevice } from '@/app/api/v1/types'
-import { insertDevice } from '@/data-access/insert-device'
+import { insertDevice } from '@/data-access/cloudflare-d1/insert-device'
 import { checkMacAddress } from '@/app/api/v1/device/validation/check-mac-address'
-import { getDeviceId } from '@/data-access/get-device-id'
-import { getAllDeviceTypes } from '@/data-access/get-all-device-types'
-import { updateHistory } from '@/data-access/update-history'
+import { getDeviceId } from '@/data-access/cloudflare-d1/get-device-id'
+import { getAllDeviceTypes } from '@/data-access/cloudflare-d1/get-all-device-types'
+import { updateHistory } from '@/data-access/cloudflare-d1/update-history'
 
 export const registerDevice = async (device: NewDevice) => {
   const macAddress = checkMacAddress(device.productUid)

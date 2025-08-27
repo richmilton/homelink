@@ -1,32 +1,16 @@
 'use client'
 import { DeviceSummary } from '@/app/api/v1/types'
 import { useEffect, useState } from 'react'
-
-type DeviceSummaryProps = {
-  deviceData: DeviceSummary
-}
-
-type DeviceItemProps = {
-  label: string
-  value: string
-}
-
-const DeviceItem = ({ label, value }: DeviceItemProps) => <li>
-  <span className="inline-block font-bold w-36 mt-1 sm:text-right mr-2">{label}:</span>
-  <span className="inline-block w-48 sm:text-left">{value}</span>
-</li>
-
-const DeviceDetails = ({ deviceData }: DeviceSummaryProps) => <li>
-  <ul className="rounded border border-gray-500 m-4 p-8">
-    <DeviceItem label="Product code" value={deviceData?.productId} />
-    <DeviceItem label="Device name" value={deviceData?.name} />
-    <DeviceItem label="Mac address" value={deviceData?.uid} />
-    <DeviceItem label="Status" value={deviceData?.status} />
-  </ul>
-</li>
+import { DeviceDetails } from '@/app/components/device-details'
+import { DeviceTable } from '@/app/components/device-table'
 
 export const DeviceList = () => {
   const [data, setData] = useState<DeviceSummary[] | null>(null)
+  const [view, setView] = useState<'card' | 'list'>('list')
+
+  const toggleView = () => {
+    setView(prevState => prevState === 'list' ? 'card' : 'list')
+  }
 
   useEffect(() => {
     if (!data) {
@@ -38,7 +22,19 @@ export const DeviceList = () => {
     }
   })
 
-  return <ul className="my-2 flex flex-wrap lg:flex-row justify-center">
-    {data?.map((device) => <DeviceDetails key={device?.uid} deviceData={device} />)}
-  </ul>
+  return <div>
+    <div className="w-full sm:text-right mt-2">
+      <button className="border border-gray-500 rounded w-36 bg-gray-700 cursor-pointer" onClick={toggleView}>
+        go to {view === 'list' ? 'card' : 'list'} view
+      </button>
+    </div>
+    {
+      view === 'list' && <DeviceTable data={data} />
+    }
+    {
+      view === 'card' && <ul className="my-1 flex flex-wrap lg:flex-row justify-center space-y-0">
+        {data?.map((device) => <DeviceDetails key={device?.uid} deviceData={device} />)}
+      </ul>
+    }
+  </div>
 }

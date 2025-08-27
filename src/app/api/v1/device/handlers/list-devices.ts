@@ -1,5 +1,5 @@
-import { getAllDeviceTypes } from '@/data-access/get-all-device-types'
-import { getAllDevices } from '@/data-access/get-all-devices'
+import { getAllDeviceTypes } from '@/data-access/cloudflare-d1/get-all-device-types'
+import { getAllDevices } from '@/data-access/cloudflare-d1/get-all-devices'
 import { DeviceSummary } from '@/app/api/v1/types'
 
 export const listDevices = async (): Promise<DeviceSummary[]> => {

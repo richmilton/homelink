@@ -1,7 +1,7 @@
-import { deleteDevice } from '@/data-access/delete-device'
+import { deleteDevice } from '@/data-access/cloudflare-d1/delete-device'
 import { checkMacAddress } from '@/app/api/v1/device/validation/check-mac-address'
-import { getDeviceById } from '@/data-access/get-device-by-id'
-import { updateHistory } from '@/data-access/update-history'
+import { getDeviceById } from '@/data-access/cloudflare-d1/get-device-by-id'
+import { updateHistory } from '@/data-access/cloudflare-d1/update-history'
 
 export const removeDevice = async (deviceId: string) => {
   checkMacAddress(deviceId)
