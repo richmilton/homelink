@@ -9,7 +9,7 @@ export const DeviceTable = ({ data }: DeviceTableProps) => <div>
     <thead className="font-bold">
     <tr>
       <th>Product</th>
-      <th className="hidden sm:block">Description</th>
+      <th className="hidden sm:table-cell">Description</th>
       <th>MAC address</th>
       <th>Status</th>
     </tr>
@@ -18,7 +18,7 @@ export const DeviceTable = ({ data }: DeviceTableProps) => <div>
     {
       data?.map(device => <tr key={device.uid}>
         <td>{device.productId}</td>
-        <td className="hidden sm:block">{device.name}</td>
+        <td className="hidden sm:table-cell">{device.name}</td>
         <td>{device.uid}</td>
         <td>{device.status}</td>
       </tr>)

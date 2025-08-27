@@ -114,7 +114,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"productUid\": \"02-01-01-01-01-EA\",\n    \"productType\": \"Ei1020\"\n}",
+					"raw": "{\n    \"productUid\": \"02-01-01-01-01-EA\",\n    \"productType\": \"Ei1234\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -147,7 +147,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"productUid\": \"04-01-01-01-01-EA\",\n    \"productType\": \"Ei1020\"\n}",
+					"raw": "{\n    \"productUid\": \"04-01-01-01-01-EA\",\n    \"productType\": \"Ei1025\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
