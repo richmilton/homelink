@@ -7,7 +7,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 Use node v20
 
 ```bash
-npm i
+npm ci
 npm run dev
 ```
 
