@@ -5,6 +5,6 @@ export default async function Dashboard() {
   const devices = await listDevices()
   return <main className="w-full text-center p-4">
     <h1 className="text-xl font-bold">Registered Homelink devices</h1>
-    <DeviceList devices={devices} />
+    <DeviceList />
   </main>
 }

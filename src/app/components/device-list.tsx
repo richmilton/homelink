@@ -1,11 +1,11 @@
 'use client'
 import { DeviceSummary } from '@/app/api/v1/types'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { DeviceDetails } from '@/app/components/device-details'
 import { DeviceTable } from '@/app/components/device-table'
 
-export const DeviceList = ({ devices }: { devices: DeviceSummary[] | null }) => {
-  const [data, setData] = useState<DeviceSummary[] | null>(devices)
+export const DeviceList = () => {
+  const [data, setData] = useState<DeviceSummary[] | null>(null)
   const [view, setView] = useState<'card' | 'list'>('list')
 
   const toggleView = () => {
@@ -20,11 +20,11 @@ export const DeviceList = ({ devices }: { devices: DeviceSummary[] | null }) => 
     })
   }
 
-  // useEffect(() => {
-  //   if (!data) {
-  //     refresh()
-  //   }
-  // })
+  useEffect(() => {
+    if (!data) {
+      refresh()
+    }
+  })
 
   return <div>
     <div className="w-full sm:text-right mt-2">

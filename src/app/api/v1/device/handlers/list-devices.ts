@@ -4,7 +4,7 @@ import { DeviceSummary } from '@/app/api/v1/types'
 
 export const listDevices = async (): Promise<DeviceSummary[]> => {
   const devices = await getAllDevices()
-  const response: DeviceSummary[]  = []
+  const response: DeviceSummary[] = []
 
   if (devices?.results?.length) {
     const deviceTypes = await getAllDeviceTypes()
