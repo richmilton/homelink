@@ -23,6 +23,7 @@
     },
     "types": [
         "./cloudflare-env.d.ts",
+        "@testing-library/jest-dom",
         "node"
     ]
   },
